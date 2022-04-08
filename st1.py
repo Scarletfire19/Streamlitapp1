@@ -42,18 +42,20 @@ def euclidean_distance(p, q):
 #p=pd.read_csv('')
 p=Xcombined.iloc[735:740]
 
-dfdistances=dfcurrentgroup
+dfdistances=dfcombined
 distances=[]
 #Induvidual
 
-for i in range(len(Xcurrentgroup)):
-  distances.append(euclidean_distance(Xcurrentgroup.iloc[i],p.iloc[3]))
+for i in range(len(Xcombined)):
+  distances.append(euclidean_distance(Xcombined.iloc[i],p.iloc[3]))
 dfdistances['distances']=distances
 
 dfdistances=dfdistances.sort_values(by=['distances'])
 
-q=dfdistances['DNA sample ethnicity and id'].iloc[:3]
-st.write(q)
+dfdistances
+print(dfdistances['DNA sample ethnicity and id'].iloc[:3])
+
+
 
 c=pd.read_csv('clustergmm15.csv')
 c=c.drop(columns=['Unnamed: 0'])
