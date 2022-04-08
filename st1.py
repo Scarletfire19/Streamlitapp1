@@ -46,7 +46,7 @@ dfdistances=dfcurrentgroup
 distances=[]
 #Induvidual
 
-for i in range(len(xcurrentgroup)):
+for i in range(len(Xcurrentgroup)):
   distances.append(euclidean_distance(Xcurrentgroup.iloc[i],p.iloc[3]))
 dfdistances['distances']=distances
 
