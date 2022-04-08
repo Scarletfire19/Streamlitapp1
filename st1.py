@@ -33,5 +33,22 @@ Xcurrentgroup=dfcurrentgroup.drop(columns=['DNA sample ethnicity'])
 
 st.dataframe(dfcurrentgroup)  
 
-fig, ax = plt.subplots(figsize=(30, 24))
-ax.scatter(dfcurrentgroup['1'], dfcurrentgroup['2'],s = 1)
+def euclidean_distance(p, q):
+    n = 25 # dimensions
+    return sum([(p[i] - q[i]) ** 2 for i in range(n)]) ** 0.5
+
+#p=pd.read_csv('')
+p=Xcombined.iloc[735:740]
+
+dfdistances=dfcombined
+distances=[]
+#Induvidual
+
+for i in range(len(Xcombined)):
+  distances.append(euclidean_distance(Xcombined.iloc[i],p.iloc[3]))
+dfdistances['distances']=distances
+
+dfdistances=dfdistances.sort_values(by=['distances'])
+
+q=dfdistances['DNA sample ethnicity and id'].iloc[:3]
+st.write(q)
