@@ -12,7 +12,6 @@ import streamlit as st
 
 #import umap
 import pandas as pd
-from matplotlib import pyplot
 
 dfcurrent=pd.read_csv("/content/G25_Current_DNA.csv")
 Xcurrent=dfcurrent.drop(columns=['DNA sample ethnicity and id','DNA sample ethnicity','sample id'])
@@ -28,31 +27,3 @@ Xcombined=dfcombined.drop(columns=['DNA sample ethnicity and id','DNA sample eth
 
 dfcurrentgroup=dfcurrent.groupby(['DNA sample ethnicity']).mean().reset_index()
 Xcurrentgroup=dfcurrentgroup.drop(columns=['DNA sample ethnicity'])
-
-def PCAplot():
-  import matplotlib.pyplot as plt
-
-  fig, ax = plt.subplots(figsize=(30, 24))
-  ax.scatter(dfcurrentgroup['1'], dfcurrentgroup['2'],s = 1)
-  #ax.scatter(point['1'],point['2'],s=500)
-
-  for i in range(len(dfcurrentgroup)):
-    ax.annotate(dfcurrentgroup['DNA sample ethnicity'][i], (dfcurrentgroup['1'][i], dfcurrentgroup['2'][i]))
-
-PCAplot()
-
-import matplotlib.pyplot as plt
-import numpy as np
-import streamlit as st
-
-arr = np.random.normal(1, 1, size=100)
-fig, ax = plt.subplots()
-ax.hist(arr, bins=20)
-
-st.pyplot(fig)
-
-df = pd.DataFrame(
-    np.random.randn(50, 20),
-    columns=('col %d' % i for i in range(20)))
-
-st.dataframe(df)  # Same as st.write(df)
