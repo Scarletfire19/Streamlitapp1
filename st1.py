@@ -11,21 +11,7 @@ Original file is located at
 import streamlit as st
 
 #import umap
-import sklearn
 import pandas as pd
-from scipy.spatial import distance_matrix
-from numpy import unique
-from numpy import where
-from sklearn.datasets import make_classification
-from sklearn.mixture import GaussianMixture
-from sklearn.cluster import SpectralClustering
-from sklearn.cluster import AffinityPropagation
-from sklearn.cluster import AgglomerativeClustering
-from sklearn.cluster import Birch
-from sklearn.cluster import MiniBatchKMeans
-from sklearn.cluster import MeanShift
-from sklearn.cluster import OPTICS
-from sklearn.cluster import SpectralClustering
 from matplotlib import pyplot
 
 dfcurrent=pd.read_csv("/content/G25_Current_DNA.csv")
