@@ -32,7 +32,6 @@ dfcurrentgroup=dfcurrent.groupby(['DNA sample ethnicity']).mean().reset_index()
 Xcurrentgroup=dfcurrentgroup.drop(columns=['DNA sample ethnicity'])
 
 def PCAplot():
-  import matplotlib.pyplot as plt
 
   fig, ax = plt.subplots(figsize=(30, 24))
   ax.scatter(dfcurrentgroup['1'], dfcurrentgroup['2'],s = 1)
