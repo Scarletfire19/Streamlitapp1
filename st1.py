@@ -47,6 +47,7 @@ ax2.scatter(dfancienthpg['1'], dfancienthpg['2'],s = 1)
 
 for i in range(len(dfancienthpg)):
   ax2.annotate(dfancienthpg['Assigned Mutation'][i], (dfancienthpg['1'][i], dfancienthpg['2'][i]))
+st.pyplot()
 
 
 
