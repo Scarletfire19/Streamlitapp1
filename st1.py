@@ -33,7 +33,22 @@ Xcurrentgroup=dfcurrentgroup.drop(columns=['DNA sample ethnicity'])
 
 st.title('ML App')
 
-st.dataframe(dfcurrentgroup)  
+dfadnalineages=pd.read_csv("adnalineages.csv")
+dfancientpcadna = pd.merge(dfadnalineages,dfancient)
+dfancienthpg=dfancientpcadna.groupby(['Assigned Mutation']).mean().reset_index()
+
+#dfadnalineages
+
+#plt.gcf().set_size_inches((90, 20))    
+
+fig2, ax2 = plt.subplots(figsize=(30, 24))
+ax2.scatter(dfancienthpg['1'], dfancienthpg['2'],s = 1)
+#ax.scatter(point['1'],point['2'],s=500)
+
+for i in range(len(dfancienthpg)):
+  ax2.annotate(dfancienthpg['Assigned Mutation'][i], (dfancienthpg['1'][i], dfancienthpg['2'][i]))
+
+
 
 def euclidean_distance(p, q):
     n = 25 # dimensions
