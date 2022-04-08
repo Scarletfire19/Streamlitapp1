@@ -11,6 +11,7 @@ Original file is located at
 import streamlit as st
 
 #import umap
+import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
