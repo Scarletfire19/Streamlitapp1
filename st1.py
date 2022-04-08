@@ -13,10 +13,10 @@ import streamlit as st
 #import umap
 import pandas as pd
 
-dfcurrent=pd.read_csv("/content/G25_Current_DNA.csv")
+dfcurrent=pd.read_csv("G25_Current_DNA.csv")
 Xcurrent=dfcurrent.drop(columns=['DNA sample ethnicity and id','DNA sample ethnicity','sample id'])
 
-dfancient=pd.read_csv("/content/G25_Ancient_DNA.csv")
+dfancient=pd.read_csv("G25_Ancient_DNA.csv")
 Xancient=dfancient.drop(columns=['DNA sample ethnicity and id','DNA sample ethnicity','sample id'])
 #Xcurrent
 
@@ -27,3 +27,5 @@ Xcombined=dfcombined.drop(columns=['DNA sample ethnicity and id','DNA sample eth
 
 dfcurrentgroup=dfcurrent.groupby(['DNA sample ethnicity']).mean().reset_index()
 Xcurrentgroup=dfcurrentgroup.drop(columns=['DNA sample ethnicity'])
+
+st.dataframe(dfcurrentgroup)  # Same as st.write(df)
