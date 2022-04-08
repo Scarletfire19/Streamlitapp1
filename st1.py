@@ -32,3 +32,6 @@ Xcurrentgroup=dfcurrentgroup.drop(columns=['DNA sample ethnicity'])
 
 
 st.dataframe(dfcurrentgroup)  
+
+fig, ax = plt.subplots(figsize=(30, 24))
+ax.scatter(dfcurrentgroup['1'], dfcurrentgroup['2'],s = 1)
