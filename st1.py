@@ -100,3 +100,13 @@ if uploaded_file is not None:
      # Can be used wherever a "file-like" object is accepted:
      dataframe = pd.read_csv(uploaded_file)
      st.write(dataframe)
+    
+    
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(30, 24))
+ax.scatter(dfcurrentgroup['1'], dfcurrentgroup['2'],s = 1)
+#ax.scatter(point['1'],point['2'],s=500)
+
+for i in range(len(dfcurrentgroup)):
+  ax.annotate(dfcurrentgroup['DNA sample ethnicity'][i], (dfcurrentgroup['1'][i], dfcurrentgroup['2'][i]))
