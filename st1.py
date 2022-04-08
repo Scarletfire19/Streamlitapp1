@@ -31,6 +31,8 @@ dfcurrentgroup=dfcurrent.groupby(['DNA sample ethnicity']).mean().reset_index()
 Xcurrentgroup=dfcurrentgroup.drop(columns=['DNA sample ethnicity'])
 
 
+st.title('ML App')
+
 st.dataframe(dfcurrentgroup)  
 
 def euclidean_distance(p, q):
