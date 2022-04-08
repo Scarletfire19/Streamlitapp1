@@ -12,6 +12,8 @@ import streamlit as st
 
 #import umap
 import pandas as pd
+import matplotlib.pyplot as plt
+
 
 dfcurrent=pd.read_csv("G25_Current_DNA.csv")
 Xcurrent=dfcurrent.drop(columns=['DNA sample ethnicity and id','DNA sample ethnicity','sample id'])
