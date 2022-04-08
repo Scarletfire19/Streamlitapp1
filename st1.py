@@ -7,7 +7,11 @@ Original file is located at
     https://colab.research.google.com/drive/1J6XoM5A3K10-5VhqbcsJWk5Ro9t_bXXD
 """
 
-pip install matplotlib.
+pandas
+matplotlib
+pydeck
+streamlit
+flexidate
 
 import streamlit as st
 from threading import activeCount
