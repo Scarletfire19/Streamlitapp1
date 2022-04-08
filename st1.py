@@ -42,12 +42,12 @@ def euclidean_distance(p, q):
 #p=pd.read_csv('')
 p=Xcombined.iloc[735:740]
 
-dfdistances=dfcombined
+dfdistances=dfcurrentgroup
 distances=[]
 #Induvidual
 
-for i in range(len(Xcombined)):
-  distances.append(euclidean_distance(Xcombined.iloc[i],p.iloc[3]))
+for i in range(len(xcurrentgroup)):
+  distances.append(euclidean_distance(Xcurrentgroup.iloc[i],p.iloc[3]))
 dfdistances['distances']=distances
 
 dfdistances=dfdistances.sort_values(by=['distances'])
