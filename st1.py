@@ -12,6 +12,8 @@ import streamlit as st
 from threading import activeCount
 import streamlit.components.v1 as components
 #import umap
+import io
+import seaborn as sns
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
