@@ -110,4 +110,4 @@ ax.scatter(dfcurrentgroup['1'], dfcurrentgroup['2'],s = 1)
 
 for i in range(len(dfcurrentgroup)):
   ax.annotate(dfcurrentgroup['DNA sample ethnicity'][i], (dfcurrentgroup['1'][i], dfcurrentgroup['2'][i]))
-plt.show()
+st.pyplot()
