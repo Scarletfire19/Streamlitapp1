@@ -104,7 +104,7 @@ if uploaded_file is not None:
     
 import matplotlib.pyplot as plt
 
-fig, ax = plt.subplots(figsize=(50, 90))
+fig, ax = plt.subplots(figsize=(45, 190))
 ax.scatter(dfcurrentgroup['1'], dfcurrentgroup['2'],s = 1)
 #ax.scatter(point['1'],point['2'],s=500)
 
