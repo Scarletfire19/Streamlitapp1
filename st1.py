@@ -9,6 +9,8 @@ Original file is located at
 
 import streamlit as st
 from threading import activeCount
+from matplotlib import pyplot as plt
+
 import streamlit.components.v1 as components
 #import umap
 import io
@@ -30,4 +32,14 @@ Xcombined=dfcombined.drop(columns=['DNA sample ethnicity and id','DNA sample eth
 dfcurrentgroup=dfcurrent.groupby(['DNA sample ethnicity']).mean().reset_index()
 Xcurrentgroup=dfcurrentgroup.drop(columns=['DNA sample ethnicity'])
 
-st.scatter(dfcurrentgroup['1'],dfcurrentgroup['1'])
+def PCAplot():
+  import matplotlib.pyplot as plt
+
+  fig, ax = plt.subplots(figsize=(30, 24))
+  ax.scatter(dfcurrentgroup['1'], dfcurrentgroup['2'],s = 1)
+  #ax.scatter(point['1'],point['2'],s=500)
+
+  for i in range(len(dfcurrentgroup)):
+    ax.annotate(dfcurrentgroup['DNA sample ethnicity'][i], (dfcurrentgroup['1'][i], dfcurrentgroup['2'][i]))
+    
+PCAplot()
