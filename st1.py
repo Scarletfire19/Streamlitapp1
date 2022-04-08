@@ -30,4 +30,4 @@ Xcombined=dfcombined.drop(columns=['DNA sample ethnicity and id','DNA sample eth
 dfcurrentgroup=dfcurrent.groupby(['DNA sample ethnicity']).mean().reset_index()
 Xcurrentgroup=dfcurrentgroup.drop(columns=['DNA sample ethnicity'])
 
-st.map(dfcurrentgroup['1'])
+st.pyplot(dfcurrentgroup['1'])
