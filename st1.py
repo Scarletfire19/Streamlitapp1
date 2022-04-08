@@ -54,3 +54,29 @@ dfdistances=dfdistances.sort_values(by=['distances'])
 
 q=dfdistances['DNA sample ethnicity and id'].iloc[:3]
 st.write(q)
+
+c=pd.read_csv('clustergmm15.csv')
+c=c.drop(columns=['Unnamed: 0'])
+
+#p=pd.read_csv('')
+p=Xcombined.iloc[735:740]
+
+def ancestry():
+  p1 = np.zeros((len(p),len(c)))
+  p2 = np.zeros((len(p),len(c)))
+
+  for i in range(len(p)):
+    for j in range(len(c)):
+      p1[i][j]=euclidean_distance(c.iloc[j],p.iloc[i])
+  distmat=pd.DataFrame(p1)
+  p2=pd.DataFrame(p2)
+
+
+  for q in range(len(p)):
+    tot=distmat.iloc[q].sum()
+  for w in range(len(c)):
+    p2.iloc[q,w]=1-((tot-distmat.iloc[q,w])/tot)
+
+#  p2=pd.DataFrame(p2)
+ancestry()
+st.datafram(p2)
