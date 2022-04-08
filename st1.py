@@ -10,7 +10,6 @@ Original file is located at
 import streamlit as st
 from threading import activeCount
 import matplotlib.pyplot as plt
-import streamlit.components.v1 as components
 #import umap
 import io
 import numpy as np
