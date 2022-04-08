@@ -79,4 +79,4 @@ def ancestry():
 
 #  p2=pd.DataFrame(p2)
 ancestry()
-st.datafram(p2)
+st.dataframe(p2)
