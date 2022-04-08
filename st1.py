@@ -77,6 +77,8 @@ def ancestry():
   for w in range(len(c)):
     p2.iloc[q,w]=1-((tot-distmat.iloc[q,w])/tot)
 
-#  p2=pd.DataFrame(p2)
+  p2=pd.DataFrame(p2)
+
 ancestry()
+
 st.dataframe(p2)
