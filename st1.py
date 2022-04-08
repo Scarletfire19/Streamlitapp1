@@ -61,24 +61,20 @@ c=c.drop(columns=['Unnamed: 0'])
 #p=pd.read_csv('')
 p=Xcombined.iloc[735:740]
 
-def ancestry():
-  p1 = np.zeros((len(p),len(c)))
-  p2 = np.zeros((len(p),len(c)))
+p1 = np.zeros((len(p),len(c)))
+p2 = np.zeros((len(p),len(c)))
 
-  for i in range(len(p)):
+for i in range(len(p)):
     for j in range(len(c)):
-      p1[i][j]=euclidean_distance(c.iloc[j],p.iloc[i])
-  distmat=pd.DataFrame(p1)
-  p2=pd.DataFrame(p2)
+        p1[i][j]=euclidean_distance(c.iloc[j],p.iloc[i])
+        distmat=pd.DataFrame(p1)
+p2=pd.DataFrame(p2)
 
-
-  for q in range(len(p)):
+for q in range(len(p)):
     tot=distmat.iloc[q].sum()
-  for w in range(len(c)):
+for w in range(len(c)):
     p2.iloc[q,w]=1-((tot-distmat.iloc[q,w])/tot)
 
-  p2=pd.DataFrame(p2)
 
-ancestry()
 
 st.dataframe(p2)
