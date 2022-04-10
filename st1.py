@@ -139,4 +139,4 @@ if page == "Page 1":
 elif page == "Page 2":
     st.write(dataframe)
 elif page == "Page 3":
-    # Display details of page 3
+    return 0
