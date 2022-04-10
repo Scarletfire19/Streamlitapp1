@@ -33,6 +33,10 @@ Xcurrentgroup=dfcurrentgroup.drop(columns=['DNA sample ethnicity'])
 
 st.title('ML App')
 
+import streamlit as st
+# Create a page dropdown 
+
+
 dfadnalineages=pd.read_csv("adnalineages.csv")
 dfancientpcadna = pd.merge(dfadnalineages,dfancient)
 dfancienthpg=dfancientpcadna.groupby(['Assigned Mutation']).mean().reset_index()
@@ -127,3 +131,12 @@ ax.scatter(dfcurrentgroup['1'], dfcurrentgroup['2'],s = 1)
 for i in range(len(dfcurrentgroup)):
   ax.annotate(dfcurrentgroup['DNA sample ethnicity'][i], (dfcurrentgroup['1'][i], dfcurrentgroup['2'][i]))
 st.pyplot()
+
+page = st.selectbox("Choose your page", ["Page 1", "Page 2", "Page 3"]) 
+
+if page == "Page 1":
+    st.dataframe(ancestry)
+elif page == "Page 2":
+    st.write(dataframe)
+elif page == "Page 3":
+    # Display details of page 3
