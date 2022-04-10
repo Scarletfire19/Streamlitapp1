@@ -84,5 +84,3 @@ elif page == "Ancient DNA Lineage Tool":
   for i in range(len(dfancienthpg)):
     ax2.annotate(dfancienthpg['Assigned Mutation'][i], (dfancienthpg['1'][i], dfancienthpg['2'][i]))
   st.pyplot()
-
-elif page == "Page 4":
