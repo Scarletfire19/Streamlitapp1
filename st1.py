@@ -136,7 +136,7 @@ k=0
 #dfdistances
 #print(dfdistances['DNA sample ethnicity and id'].iloc[:3])
 
-Tools = st.selectbox("Choose your Tool", ["Genetic World Map"]) 
+Tools = st.selectbox("Choose your Tool", ["Genetic World Map","t-SNE","Genetic Distance Tool", "PCA(Principal Component Analysis) Tool","ML Ancestry Tool","Ancient DNA Lineage Tool","Umap"]) 
 
 if Tools == "Genetic World Map":
      st.title("Genetic World Map")
