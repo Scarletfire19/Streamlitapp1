@@ -1,10 +1,16 @@
 import streamlit as st
 from threading import activeCount
 import matplotlib.pyplot as plt
-#import umap
+import pickle
+import umap
 import io
 import numpy as np
 import pandas as pd
+import streamlit_authenticator as stauth
+import os
+import plotly.express as px
+from scipy.spatial import distance
+import plotly.graph_objects as go
 
 dfcurrent=pd.read_csv("G25_Current_DNA.csv")
 Xcurrent=dfcurrent.drop(columns=['DNA sample ethnicity and id','DNA sample ethnicity','sample id'])
